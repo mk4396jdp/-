@@ -1,0 +1,10 @@
+%FSLAX24Y24*%
+%MOIN*%
+%IPPOS*%
+%LPD*%
+%ADD20C,0.01000*%
+G04 Front silkscreen (F.SilkS) - simplified placeholder*G04
+D20*
+X005000Y005000D02*
+X055000Y005000D01*
+M02*

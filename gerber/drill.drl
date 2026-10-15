@@ -1,0 +1,12 @@
+M48
+; Drill file
+;Format=2
+METRIC
+;ToolName,Diameter
+T01,3.000
+T02,0.800
+;Placing drills
+;X Y
+X010000Y020000T01
+X050000Y020000T01
+M30
