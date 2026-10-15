@@ -1,0 +1,46 @@
+# Simple netlist for ESP32-CAM breakout (for routing reference)
+
+# Power
+3V3 -> ESP_VCC, U3 VOUT, C1+, C2+
+GND -> ESP_GND, U3 GND, all caps negative pins, connector GND
+
+# USB
+USB_VBUS -> USB_CONN VBUS (if powering via USB -> feed LDO input)
+USB_D+ -> CH340 D+ (label: USB_DP)
+USB_D- -> CH340 D- (label: USB_DN)
+USB_GND -> GND
+
+# CH340 connections
+CH340_VCC -> 3V3
+CH340_GND -> GND
+CH340_TXD -> Header_RX
+CH340_RXD -> Header_TX
+CH340_RTS/CTS -> (optional) not connected
+
+# ESP32-CAM signals (AI-Thinker typical breakout)
+ESP_VCC -> 3V3
+ESP_GND -> GND
+ESP_TX -> Header_RX (or direct to CH340 RX via net)
+ESP_RX -> Header_TX (or direct to CH340 TX via net)
+ESP_IO0 -> IO0 button net
+ESP_RESET -> RESET button net
+ESP_CAM_PWDN -> (optional) leave NC or pull-down
+ESP_CAM_XCLK -> (managed internally by ESP library)
+
+# LED
+LED_ANODE -> 3V3 via R1
+LED_CATHODE -> GND
+
+# Buttons
+IO0_BUTTON -> connect IO0 to GND when pressed
+RESET_BUTTON -> connect RESET to GND when pressed
+
+# Mechanical
+Lens_hole -> position X=10.00mm Y=20.00mm radius 4.00mm
+Mount_HOLE1 -> X= - see Edge.Cuts/gcode in repo
+Mount_HOLE2 -> symmetric
+
+# Notes
+- Ensure USB D+ / D- have short, matched length traces and proper 90 ohm differential impedance if needed for high-speed use. For simple serial-only CH340 use, keep traces short and add ESD/protection if available.
+- Place decoupling capacitors close to the power pins of CH340 and ESP module.
+- Recommendation: route power traces as 1mm width for 1A capability, signal traces 0.254mm (10mil) is fine.
