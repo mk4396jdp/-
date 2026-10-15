@@ -1,0 +1,12 @@
+Designator,Mid X (mm),Mid Y (mm),Rotation (deg),Layer,Comment
+P1,3.00,6.00,0,TOP,Micro-USB B connector (SMD) - near lower-left edge
+U2,15.00,8.00,0,TOP,CH340G USB-UART (SSOP-20) - next to USB
+Y1,20.00,8.00,0,TOP,16MHz crystal for CH340
+U3,15.00,18.00,0,TOP,MIC5205-3.3 LDO regulator - power area
+C1,13.00,16.00,0,TOP,10uF (LDO input)
+C2,17.00,16.00,0,TOP,10uF (LDO output)
+C3,16.00,10.50,0,TOP,0.1uF decoupling (near CH340)
+R1,21.00,11.00,0,TOP,1k resistor (LED limit)
+D1,22.00,12.00,0,TOP,Power indicator LED
+SW1,35.00,6.00,0,TOP,IO0 SMT switch (near bottom)
+SW2,40.00,6.00,0,TOP,RESET SMT switch (near bottom)

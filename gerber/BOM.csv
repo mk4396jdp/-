@@ -1,0 +1,12 @@
+Reference,Designator,Quantity,Value,Footprint,Manufacturer,Manufacturer_PN,Comment
+U2,CH340G,1,USB-UART,SSOP-20,WCH,CH340G,USB-UART chip for USB programming
+Y1,OSC1,1,16MHz,SMD-2pin,Generic,16.000MHz,Crystal for CH340
+U3,MIC5205-3.3,1,LDO-3.3V,SOT-23,MICROCHIP,MIC5205-3.3,3.3V LDO regulator
+P1,USB_CONN,1,MicroUSB-B,MicroUSB-SMD,Generic,MicroUSB-B,Micro-USB B connector (SMD)
+C1,CIN,1,10uF,0805,Generic,10uF-0805,X5R ceramic (LDO input)
+C2,COUT,1,10uF,0805,Generic,10uF-0805,X5R ceramic (LDO output)
+C3,CBYP,1,0.1uF,0603,Generic,0.1uF-0603,Decoupling cap
+R1,LED_R,1,1k,0805,Generic,1K-0805,LED series resistor
+D1,LED,1,LED,0805,Generic,LED-0805,Power indicator LED
+SW1,SW_IO0,1,SW,SMT-4.5x4.5,Generic,SW-SMD,IO0 SMT button
+SW2,SW_RST,1,SW,SMT-4.5x4.5,Generic,SW-SMD,RESET SMT button
