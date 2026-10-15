@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OMR 试卷评分系统</title>
+</head>
+<body>
+  <h2>OMR 试卷评分系统（Flask + OpenCV）</h2>
+  <form class="upload" action="/upload" method="post" enctype="multipart/form-data">
+    <label>选择图片（可多选）：</label><br>
+    <input type="file" name="files" accept="image/*" multiple required><br><br>
+    <button type="submit">上传并评分</button>
+  </form>
+
+  {% if results %}
+  <div class="result">
+    <h3>识别结果</h3>
+    <a href="/download/{{ csv_path }}">下载 CSV</a>
+    <table>
+      <tr><th>文件名</th><th>得分</th><th>标注图</th><th>详情</th></tr>
+      {% for r in results %}
+      <tr>
+        <td>{{ r.file }}</td>
+        <td>{% if r.total is defined %}{{ r.total }} / {{ r.max }}{% else %}ERROR{% endif %}</td>
+        <td>
+          {% if r.annotated %}
+            <img src="/{{ r.annotated }}" alt="annot" style="max-width:320px;">
+          {% endif %}
+        </td>
+        <td>
+          {% if r.per_question %}
+            <ul>
+            {% for p in r.per_question %}
+              <li>Q{{ p.q }}: {{ p.choice }} ({{ p.status }})</li>
+            {% endfor %}
+            </ul>
+          {% else %}
+            {{ r.error }}
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+</body>
+</html>

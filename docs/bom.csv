@@ -1,0 +1,14 @@
+Component, reference, quantity
+ESP32-CAM (AI-Thinker) Module, U1, 1
+2x8 2.54mm Female Header, J1, 1
+CH340G USB-UART, U2, 1
+16MHz Crystal for CH340, Y1, 1
+MIC5205-3.3 (or equivalent LDO), U3, 1
+Micro-USB B connector, P1, 1
+Capacitor 10uF 0805, C1, 2
+Capacitor 0.1uF 0805, C2, 2
+Resistor 1k 0805, R1, 1
+Tact switch (RESET), SW1, 1
+Tact switch (IO0), SW2, 1
+LED 0805, D1, 1
+M2.5 mounting hole, MH1/MH2, 2
